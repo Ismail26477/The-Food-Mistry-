@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Crown of Sweets - Royal & Luxurious Design System */
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap");
+
+@layer base {
+  :root {
+    /* Royal Color Palette */
+    --background: 40 33% 98%;
+    --foreground: 340 30% 15%;
+
+    --card: 40 40% 97%;
+    --card-foreground: 340 30% 15%;
+
+    --popover: 40 40% 97%;
+    --popover-foreground: 340 30% 15%;
+
+    /* Deep Maroon - Primary */
+    --primary: 340 65% 25%;
+    --primary-foreground: 40 33% 98%;
+
+    /* Royal Purple - Secondary */
+    --secondary: 280 45% 35%;
+    --secondary-foreground: 40 33% 98%;
+
+    /* Cream/Off-white - Muted */
+    --muted: 40 30% 92%;
+    --muted-foreground: 340 20% 40%;
+
+    /* Gold - Accent */
+    --accent: 42 85% 55%;
+    --accent-foreground: 340 30% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 33% 98%;
+
+    --border: 40 25% 85%;
+    --input: 40 25% 85%;
+    --ring: 42 85% 55%;
+
+    --radius: 0.75rem;
+
+    /* Custom Royal Colors */
+    --gold: 42 85% 55%;
+    --gold-light: 42 80% 70%;
+    --gold-dark: 42 90% 40%;
+    --maroon: 340 65% 25%;
+    --maroon-light: 340 55% 40%;
+    --maroon-dark: 340 70% 18%;
+    --purple: 280 45% 35%;
+    --purple-light: 280 40% 50%;
+    --cream: 40 33% 98%;
+    --cream-dark: 40 30% 92%;
+
+    /* Gradients */
+    --gradient-royal: linear-gradient(135deg, hsl(340, 65%, 25%) 0%, hsl(280, 45%, 35%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42, 85%, 55%) 0%, hsl(42, 90%, 40%) 100%);
+    --gradient-premium: linear-gradient(135deg, hsl(340, 65%, 25%) 0%, hsl(42, 85%, 55%) 50%, hsl(280, 45%, 35%) 100%);
+
+    /* Shadows */
+    --shadow-gold: 0 4px 20px -5px hsl(42 85% 55% / 0.4);
+    --shadow-royal: 0 10px 40px -10px hsl(340 65% 25% / 0.3);
+    --shadow-card: 0 4px 20px -5px hsl(340 30% 15% / 0.1);
+
+    --sidebar-background: 40 33% 98%;
+    --sidebar-foreground: 340 30% 15%;
+    --sidebar-primary: 340 65% 25%;
+    --sidebar-primary-foreground: 40 33% 98%;
+    --sidebar-accent: 42 85% 55%;
+    --sidebar-accent-foreground: 340 30% 15%;
+    --sidebar-border: 40 25% 85%;
+    --sidebar-ring: 42 85% 55%;
+  }
+
+  .dark {
+    --background: 340 30% 8%;
+    --foreground: 40 33% 95%;
+
+    --card: 340 25% 12%;
+    --card-foreground: 40 33% 95%;
+
+    --popover: 340 25% 12%;
+    --popover-foreground: 40 33% 95%;
+
+    --primary: 42 85% 55%;
+    --primary-foreground: 340 30% 10%;
+
+    --secondary: 280 40% 45%;
+    --secondary-foreground: 40 33% 98%;
+
+    --muted: 340 20% 18%;
+    --muted-foreground: 40 20% 70%;
+
+    --accent: 42 85% 55%;
+    --accent-foreground: 340 30% 10%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 40 33% 98%;
+
+    --border: 340 20% 20%;
+    --input: 340 20% 20%;
+    --ring: 42 85% 55%;
+
+    --sidebar-background: 340 30% 8%;
+    --sidebar-foreground: 40 33% 95%;
+    --sidebar-primary: 42 85% 55%;
+    --sidebar-primary-foreground: 340 30% 10%;
+    --sidebar-accent: 340 20% 18%;
+    --sidebar-accent-foreground: 40 33% 95%;
+    --sidebar-border: 340 20% 20%;
+    --sidebar-ring: 42 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: hsl(var(--accent) / 0.3);
+    color: hsl(var(--primary));
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Poppins", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", serif;
+  }
+
+  .font-display {
+    font-family: "Playfair Display", serif;
+  }
+
+  .font-elegant {
+    font-family: "Cormorant Garamond", serif;
+  }
+
+  .font-body {
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+@layer components {
+  .btn-royal {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg;
+    box-shadow: var(--shadow-royal);
+  }
+
+  .btn-gold {
+    @apply bg-accent text-accent-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg;
+    box-shadow: var(--shadow-gold);
+  }
+
+  .card-royal {
+    @apply bg-card rounded-xl p-6 transition-all duration-300 hover:shadow-xl;
+    box-shadow: var(--shadow-card);
+  }
+
+  .gold-border {
+    border: 2px solid hsl(var(--accent));
+  }
+
+  .gradient-text {
+    background: var(--gradient-royal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gold-gradient-text {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--gold) / 0.6);
+  border-radius: 10px;
+  border: 2px solid hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--gold));
+}
+
+@layer utilities {
+  .elegant-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .elegant-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--accent) / 0.4);
+    border: none;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .magnetic-area {
+    position: relative;
+    padding: 20px;
+    margin: -20px;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .box-shadow-gold {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  }
+}
