@@ -47,7 +47,7 @@ export const Navbar = () => {
                 <SheetHeader className="p-6 border-b border-border text-left">
                   <SheetTitle className="flex items-center gap-2">
                     <Crown className="w-6 h-6 text-accent" />
-                    <span className="font-display font-bold text-primary">Crown of Sweets</span>
+                    <span className="font-display font-bold text-primary">>The Food Mistry</span>
                   </SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col gap-2 p-4">
