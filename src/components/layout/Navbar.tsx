@@ -85,7 +85,7 @@ export const Navbar = () => {
               <Crown className="w-10 h-10 text-accent" />
             </motion.div>
             <div className="flex flex-col">
-              <span className="font-display text-2xl font-bold text-primary leading-tight">The Food Mistry/span>
+              <span className="font-display text-2xl font-bold text-primary leading-tight">The Food Mistry<S/span>
               <span className="text-xs text-muted-foreground font-elegant tracking-wider">
                 Royal Taste, Sweet Moments
               </span>
